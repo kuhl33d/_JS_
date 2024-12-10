@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<title>Example One</title>
+<style>
+
+</style>
+<script>
+function show(c1)
+{
+alert("Welcome to JavaScript\nLab1")
+document.body.style.backgroundColor = c1;
+document.getElementById("f").style.backgroundColor = "lightblue";
+document.getElementById("f").style.color = "blue";
+document.getElementById("f").style.fontSize = "xx-large";
+var d="<p style='background-color:blue;color:white;font-size:150%;height:50px;text-align:center;border:5px double green'>Welcome to JavaScript</p>"
+document.getElementById("demo").innerHTML=d;
+}
+function calculate()
+{
+var res;
+
+var a=parseInt(document.getElementById("n1").value);
+var b=parseFloat(document.getElementById("n2").value);
+var c=document.getElementById("op").value;
+if(c=="+")
+res=eval(a)+eval(b);
+else if(c=="-")
+res=a-b;
+else if(c=="*")
+res=a*b;
+else if(c=="/")
+res=a/b;
+else if(c=="%")
+res=a%b;
+else if(c=="**")
+res=a**b;
+else if(c=="++")
+res=++a
+else if(c=="--")
+res=--a
+else if(c=="//")
+res=parseInt(a/b)
+else
+res="undefined"
+document.getElementById("r").value=res;
+}
+</script>
+</head>
+<body>
+<input type="button" value="Show" onmouseover="show('gray')"><br>
+<p id="demo"></p>
+<form id="f">
+<fieldset>
+<legend>Arithmetic Operation</legend>
+Num1:<input type="number" id="n1"><br>
+Num2:<input type="number" id="n2"><br>
+<hr size="3">
+Operation:<input type="text" id="op">
+<input type="button"  value="=" onclick="calculate()">
+Result:<input type="text" id="r"><br>
+</fieldset>
+</form>
+</body>
+</html>
+

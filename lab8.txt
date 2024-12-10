@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Lab9</title>
+<script>
+function f1()
+{
+var s=Math.round(4.7)+"<br>"+Math.pow(5,3)+"<br>"+Math.sqrt(64)+"<br>"+Math.abs(-4.7)+"<br>"+Math.ceil(4.4)+"<br>"+Math.floor(4.7);
+s=s+"<br>"+Math.min(5,9,-2,4,10)+"<br>"+Math.max(5,9,-2,4,10)
+document.getElementById("a").innerHTML= s
+}
+function f2()
+{
+var n1=parseInt(document.getElementById("x").value)
+var n2=parseInt(document.getElementById("y").value)
+var sum=0,count=0;
+while(n1<=n2)
+{
+if(n1%2==0)
+{
+sum+=parseInt(n1);
+count++
+}
+n1++;
+}
+var s="sum="+sum+"\ncount="+count+"\nAverage="+sum/count;
+document.getElementById("t").value=s;
+}
+function f3()
+{
+var m=Math.floor(Math.random()*20)+1;
+var s="";
+for(var i=1;i<=m;i++)
+{
+for(var j=1;j<=i;j++)
+{
+var h=Math.floor(Math.random()*90)+10;
+s=s+"<input type=button value="+h+">";
+}
+s=s+"<br>"
+}
+document.getElementById("a").innerHTML= "Lines="+m+"<br>"+s
+}
+</script>
+</head>
+<body  id="r" onload="f1()">
+<form id="f">
+Enter Number1:<input type="number" id="x"><br>
+Enter Number2:<input type="number" id="y"><br>
+Result:<br>
+<textarea cols="10" rows="10" id="t"></textarea><br>
+<input type="button" value="Average" onclick="f2()">
+<input type="button" value="Print" onclick="f3()">
+</form>
+<p id="a" style="background-color:blue;font-size:200%;text-align:left;color:white">
+</p>
+</body>
+</html>

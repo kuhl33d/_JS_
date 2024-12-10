@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7</title>
+
+    <script>
+        function but(){
+            console.log("button pressed 1");
+        }
+    </script>
+</head>
+<body>
+    <span>
+        <label for="n1">Number1:</label>
+            <input type="text" id="n1">
+        <br>
+        <label for="n2">Number2:</label>
+            <input type="text" id="n2">
+        <hr>
+        <label for="op">Operation:</label>
+            <input type="text" id="op">
+        <button id="btn" >=</button> <!-- onclick="but()" -->
+        <label for="res">Result:</label>
+            <input type="text" id="res">
+    </span>
+        <h1><b style="color: red;">Result is </b> <span id="r2"></span></h1>
+    <script>
+        let btn1 = document.getElementById("btn");
+        
+        // document.getElementById("n1").addEventListener("keyup",function(){
+            //     console.log(document.getElementById("n1").value);
+            // });
+        // btn1.onclick = function(){
+        //     console.log("button pressed 2");
+            
+        // }
+        // btn1.addEventListener("mousedown",function(e){
+        //     console.log("button pressed 2");
+        // });
+        btn1.addEventListener("mousedown",Calculate);
+
+        function Calculate(){
+            let n1 = document.getElementById("n1").value;
+            n1 = parseFloat(n1);
+            let n2 = document.getElementById("n2").value;
+            n2 = parseFloat(n2);
+            let op = document.getElementById("op").value;
+            
+            let res;
+            switch (op) {
+                case "+":
+                    if(isNaN(n1) || isNaN(n2))
+                        return;
+                    res = n1+n2;
+                    break;
+                case "-":
+                    if(isNaN(n1) || isNaN(n2))
+                        return;
+                    res = n1-n2;
+                    break;
+                case "*":
+                    if(isNaN(n1) || isNaN(n2))
+                        return;
+                    res = n1*n2;
+                    break;
+                case "/":
+                    if(isNaN(n1) || isNaN(n2) || n2 == 0)
+                        return;
+                    res = n1/n2;
+                    break;
+                case "**":
+                    if(isNaN(n1) || isNaN(n2))
+                        return;
+                    res =n1**n2;
+                    break;
+                case "%":
+                    if(isNaN(n1) || isNaN(n2))
+                        return;
+                    res = n1%n2;
+                    break;
+                case "++":
+                    if(isNaN(n1))
+                        return;
+                    res = n1+1;
+                    break;
+                case "--":
+                    if(isNaN(n1))
+                        return;
+                    res = n1-1;
+                    break;
+                default:
+                    return;
+            }
+
+            // console.log(n1,n2,op);
+            console.log(n1,op,n2,"=",res);
+            document.getElementById("res").value = res;
+            document.getElementById("r2").innerText = res;
+        }
+
+    </script>
+</body>
+</html>
