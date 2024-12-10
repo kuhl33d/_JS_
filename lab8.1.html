@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8.1</title>
+</head>
+<body onload="f1()">
+    <p id="a" style="background-color:blue;font-size:200%;text-align:left;color:white"></p>
+    <script>
+        function genRandom(lowerLimit,upperLimit){ 
+            // lower <= X < upper
+            //return (Math.floor(lowerLimit + Math.random() * upperLimit) % upperLimit);
+            
+            // lower <= X <= upper
+            return Math.floor(Math.random() * (upperLimit-lowerLimit+1))+lowerLimit ;
+        }
+
+        function f1(){
+
+            var s="Math.round(4.7)="+Math.round(4.7)+ 
+            "<br>"+"Math.pow(5,3)="+Math.pow(5,3)+"<br>" 
+            +"Math.sqrt(64)="+Math.sqrt(64)+"<br>" 
+            +"Math.abs(-4.7)="+Math.abs(-4.7)+ 
+            "<br>"+"Math.ceil(4.4)="+Math.ceil(4.4)+"<br>" 
+            +"Math.floor(4.7)="+Math.floor(4.7)+"<br>"+ 
+            "Math.min(5,9,-2,4,10)="+Math.min(5,9,-2,4,10)+"<br>" 
+            +"Math.max(5,9,-2,4,10)="+ 
+            Math.max(5,9,-2,4,10)+"<br>"+ 
+            "Math.random()="+Math.random();
+    
+            var S = `Math.round(4.7)= ${Math.round(4.7)} <br>
+            Math.pow(5,3) = ${Math.pow(5,3)} <br>
+            Math.sqrt(64) = ${Math.sqrt(64)}
+            `;
+
+            document.getElementById("a").innerHTML = S;
+        }
+
+    </script>
+</body>
+</html>
